@@ -14,7 +14,7 @@ class ImageSaver(Node):
         super().__init__('image_saver')
         self.subscription = self.create_subscription(
             Image,
-            '/video1',
+            '/video3',
             self.callback,
             10)
         self.subscription  # prevent unused variable warning
@@ -22,7 +22,7 @@ class ImageSaver(Node):
         self.bridge = CvBridge()
 
         # Set the time interval to save the image (in seconds)
-        self.save_interval = 1
+        self.save_interval = 0.3
 
         # Set the path to save the images
         self.save_path = 'saved_images/'
